@@ -7,7 +7,9 @@ We invite you to participate in identifying and proposing challenges in the area
 
 Please use the [issue template](https://github.com/w3c-cg/dataspaces/issues/new/choose) to submit a challenge, or browse to the existing challenges in [the issues](https://github.com/w3c-cg/dataspaces/issues)
 
-The challenges will be the main input for the call for papers for the 2025 Semantics in Dataspaces Workshop, held in conjunction with ESWC 2025.
+The challenges will be the main input for the call for papers for the 2025 Semantics in Dataspaces Workshop, held in conjunction with ESWC 2025:
+
+![Roadmap process](roadmap-process.svg)
 
 If you’d like to support the community group and subscribe to the mailinglist, [visit our page over at W3C](https://www.w3.org/community/dataspaces/).
 
