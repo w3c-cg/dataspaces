@@ -14,11 +14,14 @@ The challenges were a [potent input](roadmap-process-2024-2025.svg) for the call
 
 If you’d like to support / join the community group and subscribe to the mailing list, [visit our community group page at W3C](https://www.w3.org/community/dataspaces/).
 
-Useful links:
- * [AIOTI Workshop on Semantic Interoperability for Digital Twins](https://www.ercim.eu/events/aioti-workshop-on-semantic-interoperability-for-digital-twins), 2025 at Inria, Sophia Antipolis
- * [Proceedings of the second workshop on Semantics in Dataspaces (SDS2024)](https://ceur-ws.org/Vol-3705/) at ESWC 2024
- * [Proceedings of the first workshop on Semantics in Dataspaces (SDS2023)](https://dl.acm.org/doi/proceedings/10.1145/3543873#heading28) at WWW 2023
- * [Proceedings of workshop Interoperability in Data Spaces III](https://semantic.internationaldataspaces.org/workshop-2024/) at EBDVF 2024
- * [Proceedings of workshop Interoperability in Data Spaces II: Use Cases, Tooling, Governance](https://semantic.internationaldataspaces.org/workshop-2023/) at SEMANTiCS 2023
- * [Proceedings of workshop DataSpaces and Semantic Interoperability](https://semantic.internationaldataspaces.org/workshop-2022/), 2022 in Vienna
- * [Proceedings of International Workshop on Enterprise Interoperability for Industrial Data Spaces (EI4IDS 2022)](https://ei4ids2022.github.io/EI4IDS2022/) at I-ESA 2022
+The following events and event series have been identified by this community group (ordered descending by date):
+
+| Name and Link                                                                                                                                              | Organizer                                                                        | Unique Focus Summary | (Next) Date        | (Next) Location    | Submission Deadline |
+|------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|----------------------|--------------------|--------------------|---------------------|
+| [Semantics in Dataspaces (SDS) Workshop Series](https://dbis.rwth-aachen.de/SDS25/) at [ESWC](https://2025.eswc-conferences.org/)                          | Johannes Theissen-Lipp, Pieter Colpaert, André Pomp, Edward Curry, Stefan Decker |                      | June 1, 2025       | Portorož, Slovenia |                     |
+| [AIOTI Workshop on Semantic Interoperability for Digital Twins](https://www.ercim.eu/events/aioti-workshop-on-semantic-interoperability-for-digital-twins) | [ERCIM](https://www.ercim.eu/)                                                   |                      | February 5-6, 2025 | Biot, France       |                     |
+| [Interoperability in Data Spaces Workshop Series](https://semantic.internationaldataspaces.org/workshop-2024/)                                             |                                                                                  |                      |                    |                    |                     |
+| [Workshop on Enterprise Interoperability for Industrial Data Spaces (EI4IDS 2022)](https://ei4ids2022.github.io/EI4IDS2022/)                               |                                                                                  |                      |                    |                    |                     |
+|                                                                                                                                                            |                                                                                  |                      |                    |                    |                     |
+|                                                                                                                                                            |                                                                                  |                      |                    |                    |                     |
+|                                                                                                                                                            |                                                                                  |                      |                    |                    |                     |
