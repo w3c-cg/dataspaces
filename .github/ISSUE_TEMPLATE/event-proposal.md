@@ -1,6 +1,6 @@
 ---
-name: Event
-about: A proposal for adding or updating an event or an event series to the [overview table](https://github.com/w3c-cg/dataspaces).
+name: Event proposal
+about: A proposal for adding or updating an event or an event series to the overview table in the readme.
 title: ''
 labels: ['proposal: pending ❓', 'event-proposal']
 ---
