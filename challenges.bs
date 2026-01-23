@@ -1,0 +1,52 @@
+<pre class='metadata'>
+Title: Dataspace challenges
+Shortname: Challenges
+Status: LS
+URL: https://w3c-cg.github.io/dataspaces/
+Markup Shorthands: markdown yes
+Editor: Pieter Colpaert, https://pietercolpaert.be
+Repository: https://github.com/w3c-cg/dataspaces
+Abstract: The W3C community group on dataspaces maintains a list of challenges. These challenges are a target for specification writers and researchers to propose solutions for.
+</pre>
+
+# Introduction # {#introduction}
+
+This document summarizes the open challenges discussed in the W3C Dataspaces CG issue tracker.
+
+# Challenges # {#Challenges}
+
+## Vocabulary Hubs ## {#vocabulary-hubs}
+
+The challenge calls for a (federated) vocabulary hub architecture so multiple participants can publish and govern vocabularies without a single centralized hub. The goal is sovereignty, scalability, and resilience while enabling semantic interoperability using standards like Linked Data and SPARQL federation.
+
+## Bleuprints for actors, roles and responsibilities ## {#blueprints}
+
+This challenge asks for conceptual mapping between dataspace standards and their substitutes or complements (including technologies outside the dataspace ecosystem). The goal is to improve interoperability, avoid repeated mistakes, and identify gaps via peer-reviewed analysis and consensus.
+
+Discussion points to the DSSC Blueprint and toolbox as existing conceptual clarifications, and references an upcoming report comparing FIWARE, EDC, and SIMPL.
+
+## End-User Confidence in Data Integrity ## {#confidence}
+
+This challenge focuses on integrity guarantees for data stored by third parties: checksums for individual objects and collections, stable across migrations between dataspaces. It emphasizes preventing tampering or data loss for end users.
+
+Discussion asks whether this targets Linked Web Storage, how to define a "package" (HTTP response vs. triples/quads), and suggests applying integrity checks to metadata as well as data in a distributed setting.
+
+## Interoperable Policy Engines ## {#policy-engines}
+
+The challenge calls for a formal, interoperable evaluation model for ODRL policies so usage control decisions are consistent across dataspaces. It requests a reference implementation, documentation, and a shared test suite of policies, requests, and expected results.
+
+Discussion notes the need to model requests and world state (possibly via SHACL profiles), points to EDC policy engine work and DSSC enforcement frameworks, and highlights an ESWC25 paper providing a compliance report model, evaluator, test suite, and the FORCE demo application.
+
+## Data Discovery ## {#discovery}
+
+This challenge targets automated discovery of interoperable and trustworthy datasets over time. It proposes a criteria language (schema, provenance, geo-temporal scope, usage conditions), a compatible catalog data model, and an evaluation algorithm with a reference implementation.
+
+Discussion cites VoID, DCAT-AP, DSSC building blocks, and RDF Data Cube for metadata, debates whether federated querying is feasible given "data at source" policies, and argues that richer metadata (e.g., CSVW-based structural descriptions) is required beyond linking to vocabularies. Examples and public SPARQL endpoints are suggested to show feasibility.
+
+## Pipelining Workflows Across Participants ## {#pipelines}
+
+This challenge argues that dataspaces duplicate processing pipelines and could benefit from reuse of derived datasets or shared processing services. It proposes expressing desired outcomes, mapping them to processing plans, and allowing participants to advertise which plan steps they can perform, plus a techno-economic analysis of value-adding roles.
+
+Earlier discussions stressed that “intermediaries” are better seen as participants; pipelines are business-layer concerns, while dataspace protocols remain peer-to-peer. It highlights the role of trust anchors, policy negotiation, and provenance models, and suggests aligning with Gaia-X service offerings and clearer layer/plane models for business versus technical concerns.
+
+From a more high-level perspective however, the Data Governance Act (as well as the Digital Omnibus draft) talk about intermediaries as a company that is a trusted party to bring data from source to consumer.

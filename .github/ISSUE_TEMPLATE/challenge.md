@@ -1,9 +1,8 @@
 ---
-name: Challenge
+name: Challenge Proposal
 about: A well-defined problem (scientific, technical, social, etc.) identified from a specific use case or environment.
 title: ''
 labels: ['proposal: pending ❓', 'challenge']
-assignees: 'JohannesLipp'
 ---
 <!--
 Give the challenge a succinct, attractive title.
