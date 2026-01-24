@@ -11,13 +11,27 @@ Abstract: The W3C community group on dataspaces maintains a list of challenges. 
 
 # Introduction # {#introduction}
 
-This document summarizes the open challenges discussed in the W3C Dataspaces CG issue tracker.
+This document lists the challenges the W3C Dataspaces Community Group wants to see discussed.
+
+Note: While the word *dataspaces* is often written in 2 words, we position dataspaces as a similar, yet different but equally important concept as a *database*, also written in 1 word.
+
+Different definitions exist of dataspaces. 
+This community did not (yet) put forward its own definition.
+It acknowledges however that the common denominator is that dataspaces entail data sharing among multiple participants in that dataspace.
+
+Data sharing across multiple participants requires an interdisciplinary approach: it is as much about governance, as it is about business models for actors that can support such ecosystems, as it is about technical aspects.
+
+Dataspaces bring a renewed interest in topics such as interoperability, trust and ecosystem governance.
+
+Below, not only the list of challenges is mentioned, also the on-going work of, among others W3C community and working groups, and papers trying to solve those challenges are solved.
 
 # Challenges # {#Challenges}
 
 ## Vocabulary Hubs ## {#vocabulary-hubs}
 
 The challenge calls for a (federated) vocabulary hub architecture so multiple participants can publish and govern vocabularies without a single centralized hub. The goal is sovereignty, scalability, and resilience while enabling semantic interoperability using standards like Linked Data and SPARQL federation.
+
+The fact that not everyone is going to speak the same vocabulary from day 1 also raises the need for alignments between different vocabularies.
 
 ## Bleuprints for actors, roles and responsibilities ## {#blueprints}
 
