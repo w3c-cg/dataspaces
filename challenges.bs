@@ -1,7 +1,10 @@
 <pre class='metadata'>
 Title: Dataspace challenges
 Shortname: Challenges
-Status: LS
+Level: 1
+Status: w3c/CG-DRAFT
+Mailing List: public-dataspaces@w3.org
+Mailing List Archives: https://lists.w3.org/Archives/Public/public-dataspaces/
 URL: https://w3c-cg.github.io/dataspaces/
 Markup Shorthands: markdown yes
 Editor: Pieter Colpaert, https://pietercolpaert.be
@@ -72,7 +75,6 @@ Discussion notes the need to model requests and world state (possibly via SHACL 
 - 2025: [Interoperable Interpretation and Evaluation of ODRL Policies](https://raw.githubusercontent.com/woutslabbinck/papers/main/2025/Interoperable-Interpretation-and-Evaluation-of-ODRL-Policies.pdf) - Proposes a compliance report model, evaluator, and test suite for interoperable ODRL evaluation. (Resource track of ESWC)
 - 2024: [Interoperable and Continuous Usage Control Enforcement in Dataspaces](https://ceur-ws.org/Vol-3705/paper10.pdf) - Extends ODRL for time-dependent constraints and continuous enforcement.
 - 2024: [The Rights Delegation Proxy: An Approach for Delegations in the Solid Dataspace](https://ceur-ws.org/Vol-3705/paper02.pdf) - Validates delegated actions against policies in Solid-based dataspaces.
-
 
 ## Data Discovery ## {#discovery}
 
