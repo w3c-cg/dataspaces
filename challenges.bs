@@ -23,9 +23,11 @@ Data sharing across multiple participants requires an interdisciplinary approach
 
 Dataspaces bring a renewed interest in topics such as interoperability, trust and ecosystem governance.
 
-Below, not only the list of challenges is mentioned, also the on-going work of, among others W3C community and working groups, and papers trying to solve those challenges are solved.
-
 # Challenges # {#Challenges}
+
+We introduce a short description of the challenge.
+
+The challenges are a yearly recurring topic at the [Semantics in Dataspaces workshop (SDS)](https://dbis.rwth-aachen.de/SDS26/).
 
 ## Vocabulary Hubs ## {#vocabulary-hubs}
 
