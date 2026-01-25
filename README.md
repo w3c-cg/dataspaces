@@ -1,7 +1,8 @@
-
 # The W3C Dataspaces Community Group
 
-This is the repository for W3C Community Group on dataspaces. 
+This is the repository for W3C Community Group on dataspaces.
+
+Report: https://w3c-cg.github.io/dataspaces/
 
 ## Open Challenges
 
@@ -10,9 +11,7 @@ Both basic scientific research and practical experience are welcome.
 These challenges will help the dataspace community in several ways: 
 Understanding pain points, building consensus, propose solutions, and shape future work.
 
-Please use the [issue template](https://github.com/w3c-cg/dataspaces/issues/new/choose) to submit a challenge, or browse to the existing challenges in [the issues](https://github.com/w3c-cg/dataspaces/issues).
-
-The challenges were a [potent input](roadmap-process-2024-2025.svg) for the call for papers for the [2025 Semantics in Dataspaces Workshop](https://dbis.rwth-aachen.de/SDS25/), held in conjunction with [ESWC 2025](https://2025.eswc-conferences.org/).
+The challenges that made it [into the draft CG report](https://w3c-cg.github.io/dataspaces/) are the basis for the Call for Papers of [the Semantics in Dataspaces 2026 workshop](https://dbis.rwth-aachen.de/SDS26/).
 
 ## Participate
 
