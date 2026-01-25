@@ -9,7 +9,7 @@ URL: https://w3c-cg.github.io/dataspaces/
 Markup Shorthands: markdown yes
 Editor: Pieter Colpaert, https://pietercolpaert.be
 Repository: https://github.com/w3c-cg/dataspaces
-Abstract: The W3C community group on dataspaces maintains a list of challenges. These challenges are a target for specification writers and researchers to propose solutions for.
+Abstract: The W3C community group on dataspaces maintains a list of challenges.
 </pre>
 
 # Introduction # {#introduction}
@@ -32,14 +32,14 @@ We introduce a short description of the challenge.
 
 The challenges are a yearly recurring topic at the [Semantics in Dataspaces workshop (SDS)](https://dbis.rwth-aachen.de/SDS26/).
 
-## Vocabulary Hubs ## {#vocabulary-hubs}
+## Federating Vocabulary Hubs ## {#vocabulary-hubs}
 
 The challenge calls for a (federated) vocabulary hub architecture so multiple participants can publish and govern vocabularies without a single centralized hub. The goal is sovereignty, scalability, and resilience while enabling semantic interoperability using standards like Linked Data and SPARQL federation.
 
 The fact that not everyone is going to speak the same vocabulary from day 1 also raises the need for alignments between different vocabularies.
 
 **Related SDS papers**
-- 2025: [Federated Vocabulary Hubs as a Foundation for Semantic Layers in Data Spaces](https://ceur-ws.org/Vol-4007/06short.pdf) - Proposes a layered, federated vocabulary-hub architecture for semantic services and sovereignty. (References issue [#10](https://github.com/w3c-cg/dataspaces/issues/10).)
+- 2025: [Federated Vocabulary Hubs as a Foundation for Semantic Layers in Data Spaces](https://ceur-ws.org/Vol-4007/06short.pdf) - Proposes a layered, federated vocabulary-hub architecture for semantic services and sovereignty.
 - 2024: [On the Governance of Semantic Artefacts in Dataspaces](https://ceur-ws.org/Vol-3705/short08.pdf) - Defines governance practices for vocabularies and ontologies to keep semantic artefacts interoperable.
 
 ## Bleuprints for actors, roles and responsibilities ## {#blueprints}
@@ -83,9 +83,9 @@ This challenge targets automated discovery of interoperable and trustworthy data
 Discussion cites VoID, DCAT-AP, DSSC building blocks, and RDF Data Cube for metadata, debates whether federated querying is feasible given "data at source" policies, and argues that richer metadata (e.g., CSVW-based structural descriptions) is required beyond linking to vocabularies. Examples and public SPARQL endpoints are suggested to show feasibility.
 
 **Related SDS papers**
-- 2025: [piveau-X - A Compliance-Focused Semantic Web-based Catalog for Data Spaces](https://ceur-ws.org/Vol-4007/05short.pdf) - Implements a compliant catalog for dataset publication and discovery. (References issue [#2](https://github.com/w3c-cg/dataspaces/issues/2).)
-- 2025: [GC-DAM - Graph and Contextual Embeddings for Heterogeneous Data Asset Matching](https://ceur-ws.org/Vol-4007/07regular.pdf) - Embedding-based asset matching to improve discovery across heterogeneous datasets. (References issue [#2](https://github.com/w3c-cg/dataspaces/issues/2).)
-- 2025: [Federated Vocabulary Hubs as a Foundation for Semantic Layers in Data Spaces](https://ceur-ws.org/Vol-4007/06short.pdf) - Federated vocab hubs and semantic services to enable discovery across spaces. (References issue [#2](https://github.com/w3c-cg/dataspaces/issues/2).)
+- 2025: [piveau-X - A Compliance-Focused Semantic Web-based Catalog for Data Spaces](https://ceur-ws.org/Vol-4007/05short.pdf) - Implements a compliant catalog for dataset publication and discovery.
+- 2025: [GC-DAM - Graph and Contextual Embeddings for Heterogeneous Data Asset Matching](https://ceur-ws.org/Vol-4007/07regular.pdf) - Embedding-based asset matching to improve discovery across heterogeneous datasets.
+- 2025: [Federated Vocabulary Hubs as a Foundation for Semantic Layers in Data Spaces](https://ceur-ws.org/Vol-4007/06short.pdf) - Federated vocab hubs and semantic services to enable discovery across spaces.
 - 2024: [FAIRness in Dataspaces: The Role of Semantics for Data Management](https://ceur-ws.org/Vol-3705/paper01.pdf) - Maps FAIR principles to semantic methods that improve discovery and reuse.
 - 2024: [Adapting Ontology-based Data Access for Data Spaces](https://ceur-ws.org/Vol-3705/paper06.pdf) - Adapts OBDA techniques to enable semantic querying over dataspace sources.
 - 2024: [Semantic Data Link: Bridging Domain-Specific Needs with Universal and Interoperable Semantic Models](https://ceur-ws.org/Vol-3705/short13.pdf) - Proposes a lightweight semantic description framework for interoperable datasets.
@@ -100,5 +100,5 @@ Earlier discussions stressed that “intermediaries” are better seen as partic
 From a more high-level perspective however, the Data Governance Act (as well as the Digital Omnibus draft) talk about intermediaries as a company that is a trusted party to bring data from source to consumer.
 
 **Related SDS papers**
-- 2025: [Leveraging Query Decomposition for Scalable SPARQL Materialization in Dataspaces](https://ceur-ws.org/Vol-4007/04regular.pdf) - Decomposes overlapping SPARQL queries to reuse materialized subresults and reduce redundant processing. (References issue [#1](https://github.com/w3c-cg/dataspaces/issues/1).)
+- 2025: [Leveraging Query Decomposition for Scalable SPARQL Materialization in Dataspaces](https://ceur-ws.org/Vol-4007/04regular.pdf) - Decomposes overlapping SPARQL queries to reuse materialized subresults and reduce redundant processing.
 - 2023: [Towards a Data Space for Interoperability of Analytic Provenance](https://doi.org/10.1145/3543873.3587686) - Focuses on sharing analytic provenance to enable reuse of processing steps across participants.
