@@ -33,11 +33,22 @@ The challenge calls for a (federated) vocabulary hub architecture so multiple pa
 
 The fact that not everyone is going to speak the same vocabulary from day 1 also raises the need for alignments between different vocabularies.
 
+**Related SDS papers**
+- 2025: [Federated Vocabulary Hubs as a Foundation for Semantic Layers in Data Spaces](https://ceur-ws.org/Vol-4007/06short.pdf) - Proposes a layered, federated vocabulary-hub architecture for semantic services and sovereignty. (References issue [#10](https://github.com/w3c-cg/dataspaces/issues/10).)
+- 2024: [On the Governance of Semantic Artefacts in Dataspaces](https://ceur-ws.org/Vol-3705/short08.pdf) - Defines governance practices for vocabularies and ontologies to keep semantic artefacts interoperable.
+
 ## Bleuprints for actors, roles and responsibilities ## {#blueprints}
 
 This challenge asks for conceptual mapping between dataspace standards and their substitutes or complements (including technologies outside the dataspace ecosystem). The goal is to improve interoperability, avoid repeated mistakes, and identify gaps via peer-reviewed analysis and consensus.
 
 Discussion points to the DSSC Blueprint and toolbox as existing conceptual clarifications, and references an upcoming report comparing FIWARE, EDC, and SIMPL.
+
+**Related SDS papers**
+- 2025: [Towards using the Solid Protocol for Data Transport in International Data Spaces (IDS)](https://ceur-ws.org/Vol-4007/09short.pdf) - Analyzes IDS vs. Solid roles and suggests Solid as an IDS data plane.
+- 2024: [Challenges and Opportunities for Enabling the Next Generation of Cross-Domain Dataspaces](https://ceur-ws.org/Vol-3705/short12.pdf) - Vision paper on governance models, requirements, and building blocks for cross-domain dataspaces.
+- 2023: [Extending Actor Models in Data Spaces](https://doi.org/10.1145/3543873.3587645) - Extends actor model concepts to describe dataspace roles and interactions.
+- 2023: [What are “personal data spaces”?](https://doi.org/10.1145/3543873.3587656) - Clarifies definitions and boundaries of personal data spaces.
+- 2023: [Semantics in Dataspaces: Origin and Future Directions](https://doi.org/10.1145/3543873.3587689) - Surveys origins and future directions for the dataspace concept.
 
 ## End-User Confidence in Data Integrity ## {#confidence}
 
@@ -45,17 +56,34 @@ This challenge focuses on integrity guarantees for data stored by third parties:
 
 Discussion asks whether this targets Linked Web Storage, how to define a "package" (HTTP response vs. triples/quads), and suggests applying integrity checks to metadata as well as data in a distributed setting.
 
+**Related SDS papers**
+- 2024: [Selective disclosure of Digital Calibration Certificate in a quality infrastructure data space](https://ceur-ws.org/Vol-3705/paper05.pdf) - Uses verifiable presentations for trustworthy, selective disclosure of calibration data.
+- 2023: [Towards a Semantic Data Ledger for Federating Dynamic Data Spaces](https://doi.org/10.1145/3543873.3587646) - Proposes a ledger-based approach to tamper-evident federation of dynamic data spaces.
+
 ## Interoperable Policy Engines ## {#policy-engines}
 
 The challenge calls for a formal, interoperable evaluation model for ODRL policies so usage control decisions are consistent across dataspaces. It requests a reference implementation, documentation, and a shared test suite of policies, requests, and expected results.
 
 Discussion notes the need to model requests and world state (possibly via SHACL profiles), points to EDC policy engine work and DSSC enforcement frameworks, and highlights an ESWC25 paper providing a compliance report model, evaluator, test suite, and the FORCE demo application.
 
+**Related SDS papers**
+- 2024: [Interoperable and Continuous Usage Control Enforcement in Dataspaces](https://ceur-ws.org/Vol-3705/paper10.pdf) - Extends ODRL for time-dependent constraints and continuous enforcement.
+- 2024: [The Rights Delegation Proxy: An Approach for Delegations in the Solid Dataspace](https://ceur-ws.org/Vol-3705/paper02.pdf) - Validates delegated actions against policies in Solid-based dataspaces.
+
 ## Data Discovery ## {#discovery}
 
 This challenge targets automated discovery of interoperable and trustworthy datasets over time. It proposes a criteria language (schema, provenance, geo-temporal scope, usage conditions), a compatible catalog data model, and an evaluation algorithm with a reference implementation.
 
 Discussion cites VoID, DCAT-AP, DSSC building blocks, and RDF Data Cube for metadata, debates whether federated querying is feasible given "data at source" policies, and argues that richer metadata (e.g., CSVW-based structural descriptions) is required beyond linking to vocabularies. Examples and public SPARQL endpoints are suggested to show feasibility.
+
+**Related SDS papers**
+- 2025: [piveau-X - A Compliance-Focused Semantic Web-based Catalog for Data Spaces](https://ceur-ws.org/Vol-4007/05short.pdf) - Implements a compliant catalog for dataset publication and discovery. (References issue [#2](https://github.com/w3c-cg/dataspaces/issues/2).)
+- 2025: [GC-DAM - Graph and Contextual Embeddings for Heterogeneous Data Asset Matching](https://ceur-ws.org/Vol-4007/07regular.pdf) - Embedding-based asset matching to improve discovery across heterogeneous datasets. (References issue [#2](https://github.com/w3c-cg/dataspaces/issues/2).)
+- 2025: [Federated Vocabulary Hubs as a Foundation for Semantic Layers in Data Spaces](https://ceur-ws.org/Vol-4007/06short.pdf) - Federated vocab hubs and semantic services to enable discovery across spaces. (References issue [#2](https://github.com/w3c-cg/dataspaces/issues/2).)
+- 2024: [FAIRness in Dataspaces: The Role of Semantics for Data Management](https://ceur-ws.org/Vol-3705/paper01.pdf) - Maps FAIR principles to semantic methods that improve discovery and reuse.
+- 2024: [Adapting Ontology-based Data Access for Data Spaces](https://ceur-ws.org/Vol-3705/paper06.pdf) - Adapts OBDA techniques to enable semantic querying over dataspace sources.
+- 2024: [Semantic Data Link: Bridging Domain-Specific Needs with Universal and Interoperable Semantic Models](https://ceur-ws.org/Vol-3705/short13.pdf) - Proposes a lightweight semantic description framework for interoperable datasets.
+
 
 ## Pipelining Workflows Across Participants ## {#pipelines}
 
@@ -64,3 +92,7 @@ This challenge argues that dataspaces duplicate processing pipelines and could b
 Earlier discussions stressed that “intermediaries” are better seen as participants; pipelines are business-layer concerns, while dataspace protocols remain peer-to-peer. It highlights the role of trust anchors, policy negotiation, and provenance models, and suggests aligning with Gaia-X service offerings and clearer layer/plane models for business versus technical concerns.
 
 From a more high-level perspective however, the Data Governance Act (as well as the Digital Omnibus draft) talk about intermediaries as a company that is a trusted party to bring data from source to consumer.
+
+**Related SDS papers**
+- 2025: [Leveraging Query Decomposition for Scalable SPARQL Materialization in Dataspaces](https://ceur-ws.org/Vol-4007/04regular.pdf) - Decomposes overlapping SPARQL queries to reuse materialized subresults and reduce redundant processing. (References issue [#1](https://github.com/w3c-cg/dataspaces/issues/1).)
+- 2023: [Towards a Data Space for Interoperability of Analytic Provenance](https://doi.org/10.1145/3543873.3587686) - Focuses on sharing analytic provenance to enable reuse of processing steps across participants.
