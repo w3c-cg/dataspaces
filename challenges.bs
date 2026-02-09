@@ -88,7 +88,6 @@ Discussion cites VoID, DCAT-AP, DSSC building blocks, and RDF Data Cube for meta
 - 2025: [Federated Vocabulary Hubs as a Foundation for Semantic Layers in Data Spaces](https://ceur-ws.org/Vol-4007/06short.pdf) - Federated vocab hubs and semantic services to enable discovery across spaces.
 - 2024: [FAIRness in Dataspaces: The Role of Semantics for Data Management](https://ceur-ws.org/Vol-3705/paper01.pdf) - Maps FAIR principles to semantic methods that improve discovery and reuse.
 - 2024: [Adapting Ontology-based Data Access for Data Spaces](https://ceur-ws.org/Vol-3705/paper06.pdf) - Adapts OBDA techniques to enable semantic querying over dataspace sources.
-- 2024: [Semantic Data Link: Bridging Domain-Specific Needs with Universal and Interoperable Semantic Models](https://ceur-ws.org/Vol-3705/short13.pdf) - Proposes a lightweight semantic description framework for interoperable datasets.
 
 
 ## Pipelining Workflows Across Participants ## {#pipelines}
@@ -102,3 +101,20 @@ From a more high-level perspective however, the Data Governance Act (as well as 
 **Related SDS papers**
 - 2025: [Leveraging Query Decomposition for Scalable SPARQL Materialization in Dataspaces](https://ceur-ws.org/Vol-4007/04regular.pdf) - Decomposes overlapping SPARQL queries to reuse materialized subresults and reduce redundant processing.
 - 2023: [Towards a Data Space for Interoperability of Analytic Provenance](https://doi.org/10.1145/3543873.3587686) - Focuses on sharing analytic provenance to enable reuse of processing steps across participants.
+
+## Schema Alignment and Semantic Data Transformation ## {#schema-alignment}
+
+This challenge addresses the fact that dataspaces typically do not enforce a single common data model. Each participant retains its own schemas and vocabularies, which makes interoperability dependent on explicit alignments across those heterogeneous representations.
+
+Schema alignment is not only about documenting correspondences. To be operational in real data exchange and federation settings, alignments usually need to be accompanied by semantic data transformation. In other words, the challenge is to move from “these fields mean the same” to executable, testable mappings that can actually convert data instances from one participant representation into another.
+
+Discussion points  
+1. How can participants publish machine readable schema descriptions that enable alignment at scale, for example, using RDF, OWL, SHACL, DCAT profiles, ...  
+2. How should alignments be expressed so they are both semantically precise and executable?
+3. How can mappings support typical transformation needs such as datatype conversion, unit conversion, normalization of value sets, and changes in granularity such as splitting and merging attributes  
+4. How can alignments and transformations be validated and regression tested, especially when schemas evolve and introduce breaking changes  
+5. What governance and lifecycle mechanisms are needed so that alignments can be versioned, reviewed, deprecated, and reused across participants, potentially via federated registries or hubs
+
+**Related SDS papers**  
+- 2024: [Semantic Data Link: Bridging Domain-Specific Needs with Universal and Interoperable Semantic Models](https://ceur-ws.org/Vol-3705/short13.pdf) - Proposes a lightweight semantic description framework for interoperable datasets.
+- 2023: [The PLASMA Framework: Laying the Path to Domain-Specific Semantics in Dataspaces](https://dl.acm.org/doi/10.1145/3543873.3587662) - Focuses on a tool for creating semantic models for data sources 
