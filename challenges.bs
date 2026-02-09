@@ -36,8 +36,6 @@ The challenges are a yearly recurring topic at the [Semantics in Dataspaces work
 
 The challenge calls for a (federated) vocabulary hub architecture so multiple participants can publish and govern vocabularies without a single centralized hub. The goal is sovereignty, scalability, and resilience while enabling semantic interoperability using standards like Linked Data and SPARQL federation.
 
-The fact that not everyone is going to speak the same vocabulary from day 1 also raises the need for alignments between different vocabularies.
-
 **Related SDS papers**
 - 2025: [Federated Vocabulary Hubs as a Foundation for Semantic Layers in Data Spaces](https://ceur-ws.org/Vol-4007/06short.pdf) - Proposes a layered, federated vocabulary-hub architecture for semantic services and sovereignty.
 - 2024: [On the Governance of Semantic Artefacts in Dataspaces](https://ceur-ws.org/Vol-3705/short08.pdf) - Defines governance practices for vocabularies and ontologies to keep semantic artefacts interoperable.
