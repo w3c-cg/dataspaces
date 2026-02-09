@@ -8,7 +8,7 @@
   <meta content="Bikeshed version 3c53a5b02, updated Thu Nov 27 17:03:30 2025 +0000" name="generator">
   <link href="https://w3c-cg.github.io/dataspaces/" rel="canonical">
   <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
-  <meta content="efb1741f7875c30540908156fa764a00dcd2588c" name="revision">
+  <meta content="1a1793add76b3e959fb947cfb3f7ac77bc076822" name="revision">
   <meta content="dark light" name="color-scheme">
   <link href="https://www.w3.org/StyleSheets/TR/2021/dark.css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css">
 <style>/* Boilerplate: style-autolinks */
@@ -417,7 +417,7 @@ dfn > a.self-link::before      { content: "#"; }
 </p>
    <h1 class="no-ref p-name" id="title">Dataspace challenges</h1>
    <p id="w3c-state"><a href="https://www.w3.org/standards/types/#CG-DRAFT">Draft Community Group Report</a>,
-    <time class="dt-updated" datetime="2026-01-27">27 January 2026</time></p>
+    <time class="dt-updated" datetime="2026-02-09">9 February 2026</time></p>
    <details open>
     <summary>More details about this document</summary>
     <div data-fill-with="spec-metadata">
@@ -460,6 +460,7 @@ dfn > a.self-link::before      { content: "#"; }
       <li><a href="#policy-engines"><span class="secno">2.4</span> <span class="content">Interoperable Policy Engines</span></a>
       <li><a href="#discovery"><span class="secno">2.5</span> <span class="content">Data Discovery</span></a>
       <li><a href="#pipelines"><span class="secno">2.6</span> <span class="content">Pipelining Workflows Across Participants</span></a>
+      <li><a href="#schema-alignment"><span class="secno">2.7</span> <span class="content">Schema Alignment and Semantic Data Transformation</span></a>
      </ol>
     <li>
      <a href="#w3c-conformance"><span class="secno"></span> <span class="content">Conformance</span></a>
@@ -548,8 +549,6 @@ It acknowledges however that the common denominator is that dataspaces entail da
      <p>2024: <a href="https://ceur-ws.org/Vol-3705/paper01.pdf">FAIRness in Dataspaces: The Role of Semantics for Data Management</a> - Maps FAIR principles to semantic methods that improve discovery and reuse.</p>
     <li data-md>
      <p>2024: <a href="https://ceur-ws.org/Vol-3705/paper06.pdf">Adapting Ontology-based Data Access for Data Spaces</a> - Adapts OBDA techniques to enable semantic querying over dataspace sources.</p>
-    <li data-md>
-     <p>2024: <a href="https://ceur-ws.org/Vol-3705/short13.pdf">Semantic Data Link: Bridging Domain-Specific Needs with Universal and Interoperable Semantic Models</a> - Proposes a lightweight semantic description framework for interoperable datasets.</p>
    </ul>
    <h3 class="heading settled" data-level="2.6" id="pipelines"><span class="secno">2.6. </span><span class="content">Pipelining Workflows Across Participants</span><a class="self-link" href="#pipelines"></a></h3>
    <p>This challenge argues that dataspaces duplicate processing pipelines and could benefit from reuse of derived datasets or shared processing services. It proposes expressing desired outcomes, mapping them to processing plans, and allowing participants to advertise which plan steps they can perform, plus a techno-economic analysis of value-adding roles.</p>
@@ -561,6 +560,29 @@ It acknowledges however that the common denominator is that dataspaces entail da
      <p>2025: <a href="https://ceur-ws.org/Vol-4007/04regular.pdf">Leveraging Query Decomposition for Scalable SPARQL Materialization in Dataspaces</a> - Decomposes overlapping SPARQL queries to reuse materialized subresults and reduce redundant processing.</p>
     <li data-md>
      <p>2023: <a href="https://doi.org/10.1145/3543873.3587686">Towards a Data Space for Interoperability of Analytic Provenance</a> - Focuses on sharing analytic provenance to enable reuse of processing steps across participants.</p>
+   </ul>
+   <h3 class="heading settled" data-level="2.7" id="schema-alignment"><span class="secno">2.7. </span><span class="content">Schema Alignment and Semantic Data Transformation</span><a class="self-link" href="#schema-alignment"></a></h3>
+   <p>This challenge addresses the fact that dataspaces typically do not enforce a single common data model. Each participant retains its own schemas and vocabularies, which makes interoperability dependent on explicit alignments across those heterogeneous representations.</p>
+   <p>Schema alignment is not only about documenting correspondences. To be operational in real data exchange and federation settings, alignments usually need to be accompanied by semantic data transformation. In other words, the challenge is to move from “these fields mean the same” to executable, testable mappings that can actually convert data instances from one participant representation into another.</p>
+   <p>Discussion points</p>
+   <ol>
+    <li data-md>
+     <p>How can participants publish machine readable schema descriptions that enable alignment at scale, for example, using RDF, OWL, SHACL, DCAT profiles, ...</p>
+    <li data-md>
+     <p>How should alignments be expressed so they are both semantically precise and executable?</p>
+    <li data-md>
+     <p>How can mappings support typical transformation needs such as datatype conversion, unit conversion, normalization of value sets, and changes in granularity such as splitting and merging attributes</p>
+    <li data-md>
+     <p>How can alignments and transformations be validated and regression tested, especially when schemas evolve and introduce breaking changes</p>
+    <li data-md>
+     <p>What governance and lifecycle mechanisms are needed so that alignments can be versioned, reviewed, deprecated, and reused across participants, potentially via federated registries or hubs</p>
+   </ol>
+   <p><strong>Related SDS papers</strong></p>
+   <ul>
+    <li data-md>
+     <p>2024: <a href="https://ceur-ws.org/Vol-3705/short13.pdf">Semantic Data Link: Bridging Domain-Specific Needs with Universal and Interoperable Semantic Models</a> - Proposes a lightweight semantic description framework for interoperable datasets.</p>
+    <li data-md>
+     <p>2023: <a href="https://dl.acm.org/doi/10.1145/3543873.3587662">The PLASMA Framework: Laying the Path to Domain-Specific Semantics in Dataspaces</a> - Focuses on a tool for creating semantic models for data sources</p>
    </ul>
   </main>
   <div data-fill-with="conformance">
