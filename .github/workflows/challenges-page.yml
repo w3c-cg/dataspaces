@@ -168,20 +168,3 @@ jobs:
           </html>
           EOF
           } > releases/index.html
-          cat > index.html <<EOF
-          <!doctype html>
-          <meta charset="utf-8">
-          <title>Redirecting to SDS Challenges ${tag}</title>
-          <meta http-equiv="refresh" content="0; url=${dest}/index.html">
-          <link rel="canonical" href="${dest}/index.html">
-          <p>Latest release: <a href="${dest}/index.html">${dest}/index.html</a></p>
-          EOF
-          if git status --porcelain | grep . >/dev/null; then
-            git config user.email "w3c+github-actions[bot]@users.noreply.github.com"
-            git config user.name "W3C GH archival [bot]"
-            git add index.html releases/index.html "${dest}"
-            git commit -m "Add challenges snapshot for ${tag}"
-            git push
-          else
-            echo "No changes to commit."
-          fi
