@@ -15,14 +15,11 @@ The challenges that made it [into the draft CG report](https://w3c-cg.github.io/
 
 ## Publishing yearly challenges
 
-After each SDS workshop, merge the updated `challenges.bs` document to `main` and publish a yearly snapshot by pushing a tag, for example:
-
-```sh
-git tag sds-2026
-git push origin sds-2026
-```
+After each SDS workshop, merge the updated `challenges.bs` document to `main` and publish a yearly snapshot by pushing a tag.
 
 The GitHub Actions workflow publishes `main` as the working draft at `https://w3c-cg.github.io/dataspaces/workingdraft/`. Tag builds are archived under `https://w3c-cg.github.io/dataspaces/releases/<tag>/`, and the site root redirects to the latest tagged challenges document.
+
+https://w3c-cg.github.io/dataspaces/ will always redirect to the 2026 release to keep the links from papers functional.
 
 ## Participate
 
