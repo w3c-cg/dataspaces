@@ -2,13 +2,17 @@ name: Build challenges page
 
 on:
   pull_request:
-    paths: ["challenges.bs"]
+    paths: ["challenges.bs", "*.svg", "*.png", "*.jpg", "*.jpeg", "*.webp", ".github/workflows/challenges-page.yml"]
   push:
     branches: [main]
-    paths: ["challenges.bs"]
     tags: ["*"]
+    paths: ["challenges.bs", "*.svg", "*.png", "*.jpg", "*.jpeg", "*.webp", ".github/workflows/challenges-page.yml"]
 
   workflow_dispatch:
+
+concurrency:
+  group: gh-pages-publish
+  cancel-in-progress: false
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -36,7 +40,43 @@ jobs:
           # output filename defaults to your input
           # with .html extension instead,
           # but if you want to customize it:
-          DESTINATION: index.html
+          DESTINATION: ${{ startsWith(github.ref, 'refs/tags/') && 'index.html' || 'workingdraft/index.html' }}
+
+  copy-working-draft-assets:
+    name: Copy working draft assets
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+
+      - name: Checkout source snapshot
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.sha }}
+          path: source-snapshot
+
+      - name: Copy working draft assets
+        run: |
+          set -euo pipefail
+          mkdir -p workingdraft
+          find source-snapshot -maxdepth 1 -type f \( -iname "*.svg" -o -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) -exec cp {} workingdraft/ \;
+          rm -rf source-snapshot
+          if git status --porcelain | grep . >/dev/null; then
+            git config user.email "w3c+github-actions[bot]@users.noreply.github.com"
+            git config user.name "W3C GH archival [bot]"
+            git add workingdraft
+            git commit -m "Update challenges working draft assets"
+            git push
+          else
+            echo "No changes to commit."
+          fi
 
   copy-tag-version:
     name: Copy tag snapshot
@@ -52,18 +92,95 @@ jobs:
           ref: gh-pages
           fetch-depth: 0
 
-      - name: Copy spec snapshot
+      - name: Checkout source snapshot
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.ref }}
+          path: source-snapshot
+
+      - name: Copy challenges snapshot
         run: |
           set -euo pipefail
           tag="${GITHUB_REF_NAME}"
-          dest="versions/${tag}"
+          dest="releases/${tag}"
           mkdir -p "${dest}"
           cp index.html "${dest}/index.html"
+          find source-snapshot -maxdepth 1 -type f \( -iname "*.svg" -o -iname "*.png" -o -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.webp" \) -exec cp {} "${dest}/" \;
+          rm -rf source-snapshot
+          mkdir -p releases
+          {
+            cat <<EOF
+          <!doctype html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>SDS Challenge Releases</title>
+            <style>
+              body {
+                color: #1f1f1f;
+                font-family: Arial, sans-serif;
+                line-height: 1.5;
+                margin: 0 auto;
+                max-width: 48rem;
+                padding: 3rem 1.5rem;
+              }
+              header {
+                border-bottom: 1px solid #d9d9d9;
+                margin-bottom: 2rem;
+                padding-bottom: 1.5rem;
+                text-align: center;
+              }
+              h1 {
+                color: #005ea8;
+                font-size: 2rem;
+                font-weight: 600;
+                margin: 0;
+              }
+              ul {
+                list-style: none;
+                padding: 0;
+              }
+              li {
+                border-bottom: 1px solid #d9d9d9;
+              }
+              a {
+                color: #005ea8;
+                display: block;
+                padding: 0.75rem 0;
+              }
+            </style>
+          </head>
+          <body>
+            <header>
+              <h1>SDS Challenge Releases</h1>
+            </header>
+            <main>
+              <ul>
+          EOF
+            find releases -mindepth 1 -maxdepth 1 -type d -printf '%f\n' | sort -Vr | while read -r release; do
+              printf '        <li><a href="%s/">%s</a></li>\n' "$release" "$release"
+            done
+            cat <<EOF
+              </ul>
+            </main>
+          </body>
+          </html>
+          EOF
+          } > releases/index.html
+          cat > index.html <<EOF
+          <!doctype html>
+          <meta charset="utf-8">
+          <title>Redirecting to SDS Challenges ${tag}</title>
+          <meta http-equiv="refresh" content="0; url=${dest}/index.html">
+          <link rel="canonical" href="${dest}/index.html">
+          <p>Latest release: <a href="${dest}/index.html">${dest}/index.html</a></p>
+          EOF
           if git status --porcelain | grep . >/dev/null; then
             git config user.email "w3c+github-actions[bot]@users.noreply.github.com"
             git config user.name "W3C GH archival [bot]"
-            git add "${dest}/index.html"
-            git commit -m "Add spec snapshot for ${tag}"
+            git add index.html releases/index.html "${dest}"
+            git commit -m "Add challenges snapshot for ${tag}"
             git push
           else
             echo "No changes to commit."

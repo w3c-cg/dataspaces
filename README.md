@@ -13,6 +13,17 @@ Understanding pain points, building consensus, propose solutions, and shape futu
 
 The challenges that made it [into the draft CG report](https://w3c-cg.github.io/dataspaces/) are the basis for the Call for Papers of [the Semantics in Dataspaces 2026 workshop](https://dbis.rwth-aachen.de/SDS26/).
 
+## Publishing yearly challenges
+
+After each SDS workshop, merge the updated `challenges.bs` document to `main` and publish a yearly snapshot by pushing a tag, for example:
+
+```sh
+git tag sds-2026
+git push origin sds-2026
+```
+
+The GitHub Actions workflow publishes `main` as the working draft at `https://w3c-cg.github.io/dataspaces/workingdraft/`. Tag builds are archived under `https://w3c-cg.github.io/dataspaces/releases/<tag>/`, and the site root redirects to the latest tagged challenges document.
+
 ## Participate
 
 If you’d like to support / join the community group and subscribe to the mailing list, [visit our community group page at W3C](https://www.w3.org/community/dataspaces/).
