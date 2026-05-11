@@ -2,7 +2,8 @@
 
 This is the repository for W3C Community Group on dataspaces.
 
-Report: https://w3c-cg.github.io/dataspaces/
+ * 2026 report: https://w3c-cg.github.io/dataspaces/releases/2026/
+ * Working draft for 2027: https://w3c-cg.github.io/dataspaces/workingdraft/
 
 ## Open Challenges
 
