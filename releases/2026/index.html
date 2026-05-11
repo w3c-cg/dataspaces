@@ -1,0 +1,637 @@
+<!doctype html><html lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Dataspace challenges</title>
+  <meta content="CG-DRAFT" name="w3c-status">
+  <link href="https://www.w3.org/StyleSheets/TR/2021/cg-draft" rel="stylesheet">
+  <meta content="Bikeshed version 0a3d88311, updated Mon May 4 18:07:03 2026 +0000" name="generator">
+  <link href="https://w3c-cg.github.io/dataspaces/" rel="canonical">
+  <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
+  <meta content="06a3b05f7b10f1a1fd31b121175cc18e6517d4de" name="revision">
+  <meta content="dark light" name="color-scheme">
+  <link href="https://www.w3.org/StyleSheets/TR/2021/dark.css" media="(prefers-color-scheme: dark)" rel="stylesheet" type="text/css">
+<style>/* Boilerplate: style-autolinks */
+.css.css, .property.property, .descriptor.descriptor {
+    color: var(--a-normal-text);
+    font-size: inherit;
+    font-family: inherit;
+}
+.css::before, .property::before, .descriptor::before {
+    content: "‘";
+}
+.css::after, .property::after, .descriptor::after {
+    content: "’";
+}
+.property, .descriptor {
+    /* Don't wrap property and descriptor names */
+    white-space: nowrap;
+}
+.type { /* CSS value <type> */
+    font-style: italic;
+}
+pre .property::before, pre .property::after {
+    content: "";
+}
+[data-link-type="property"]::before,
+[data-link-type="propdesc"]::before,
+[data-link-type="descriptor"]::before,
+[data-link-type="value"]::before,
+[data-link-type="function"]::before,
+[data-link-type="at-rule"]::before,
+[data-link-type="selector"]::before,
+[data-link-type="maybe"]::before {
+    content: "‘";
+}
+[data-link-type="property"]::after,
+[data-link-type="propdesc"]::after,
+[data-link-type="descriptor"]::after,
+[data-link-type="value"]::after,
+[data-link-type="function"]::after,
+[data-link-type="at-rule"]::after,
+[data-link-type="selector"]::after,
+[data-link-type="maybe"]::after {
+    content: "’";
+}
+
+[data-link-type].production::before,
+[data-link-type].production::after,
+.prod [data-link-type]::before,
+.prod [data-link-type]::after {
+    content: "";
+}
+
+[data-link-type=element],
+[data-link-type=element-attr] {
+    font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
+    font-size: .9em;
+}
+[data-link-type=element]::before { content: "<" }
+[data-link-type=element]::after  { content: ">" }
+
+[data-link-type=biblio] {
+    white-space: pre;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --selflink-text: black;
+        --selflink-bg: silver;
+        --selflink-hover-text: white;
+    }
+}
+</style>
+<style>/* Boilerplate: style-colors */
+/* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
+:root {
+    color-scheme: light dark;
+
+    --text: black;
+    --bg: white;
+
+    --unofficial-watermark: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
+
+    --logo-bg: #1a5e9a;
+    --logo-active-bg: #c00;
+    --logo-text: white;
+
+    --tocnav-normal-text: #707070;
+    --tocnav-normal-bg: var(--bg);
+    --tocnav-hover-text: var(--tocnav-normal-text);
+    --tocnav-hover-bg: #f8f8f8;
+    --tocnav-active-text: #c00;
+    --tocnav-active-bg: var(--tocnav-normal-bg);
+
+    --tocsidebar-text: var(--text);
+    --tocsidebar-bg: #f7f8f9;
+    --tocsidebar-shadow: rgba(0,0,0,.1);
+    --tocsidebar-heading-text: hsla(203,20%,40%,.7);
+
+    --toclink-text: var(--text);
+    --toclink-underline: #3980b5;
+    --toclink-visited-text: var(--toclink-text);
+    --toclink-visited-underline: #054572;
+
+    --heading-text: #005a9c;
+
+    --hr-text: var(--text);
+
+    --algo-border: #def;
+
+    --del-text: red;
+    --del-bg: transparent;
+    --ins-text: #080;
+    --ins-bg: transparent;
+
+    --a-normal-text: #034575;
+    --a-normal-underline: #bbb;
+    --a-visited-text: var(--a-normal-text);
+    --a-visited-underline: #707070;
+    --a-hover-bg: rgba(75%, 75%, 75%, .25);
+    --a-active-text: #c00;
+    --a-active-underline: #c00;
+
+    --blockquote-border: silver;
+    --blockquote-bg: transparent;
+    --blockquote-text: currentcolor;
+
+    --issue-border: #e05252;
+    --issue-bg: #fbe9e9;
+    --issue-text: var(--text);
+    --issueheading-text: #831616;
+
+    --example-border: #e0cb52;
+    --example-bg: #fcfaee;
+    --example-text: var(--text);
+    --exampleheading-text: #574b0f;
+
+    --note-border: #52e052;
+    --note-bg: #e9fbe9;
+    --note-text: var(--text);
+    --noteheading-text: hsl(120, 70%, 30%);
+    --notesummary-underline: silver;
+
+    --assertion-border: #aaa;
+    --assertion-bg: #eee;
+    --assertion-text: black;
+
+    --advisement-border: orange;
+    --advisement-bg: #fec;
+    --advisement-text: var(--text);
+    --advisementheading-text: #b35f00;
+
+    --warning-border: red;
+    --warning-bg: hsla(40,100%,50%,0.95);
+    --warning-text: var(--text);
+
+    --amendment-border: #330099;
+    --amendment-bg: #F5F0FF;
+    --amendment-text: var(--text);
+    --amendmentheading-text: #220066;
+
+    --def-border: #8ccbf2;
+    --def-bg: #def;
+    --def-text: var(--text);
+    --defrow-border: #bbd7e9;
+
+    --datacell-border: silver;
+
+    --indexinfo-text: #707070;
+
+    --indextable-hover-text: black;
+    --indextable-hover-bg: #f7f8f9;
+
+    --outdatedspec-bg: rgba(0, 0, 0, .5);
+    --outdatedspec-text: black;
+    --outdated-bg: maroon;
+    --outdated-text: white;
+    --outdated-shadow: red;
+
+    --editedrec-bg: darkorange;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #ddd;
+        --bg: black;
+
+        --unofficial-watermark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg fill='%23100808' transform='translate(200 200) rotate(-45) translate(-200 -200)' stroke='%23100808' stroke-width='3'%3E%3Ctext x='50%25' y='220' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EUNOFFICIAL%3C/text%3E%3Ctext x='50%25' y='305' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EDRAFT%3C/text%3E%3C/g%3E%3C/svg%3E");
+
+        --logo-bg: #1a5e9a;
+        --logo-active-bg: #c00;
+        --logo-text: white;
+
+        --tocnav-normal-text: #999;
+        --tocnav-normal-bg: var(--bg);
+        --tocnav-hover-text: var(--tocnav-normal-text);
+        --tocnav-hover-bg: #080808;
+        --tocnav-active-text: #f44;
+        --tocnav-active-bg: var(--tocnav-normal-bg);
+
+        --tocsidebar-text: var(--text);
+        --tocsidebar-bg: #080808;
+        --tocsidebar-shadow: rgba(255,255,255,.1);
+        --tocsidebar-heading-text: hsla(203,20%,40%,.7);
+
+        --toclink-text: var(--text);
+        --toclink-underline: #6af;
+        --toclink-visited-text: var(--toclink-text);
+        --toclink-visited-underline: #054572;
+
+        --heading-text: #8af;
+
+        --hr-text: var(--text);
+
+        --algo-border: #456;
+
+        --del-text: #f44;
+        --del-bg: transparent;
+        --ins-text: #4a4;
+        --ins-bg: transparent;
+
+        --a-normal-text: #6af;
+        --a-normal-underline: #555;
+        --a-visited-text: var(--a-normal-text);
+        --a-visited-underline: var(--a-normal-underline);
+        --a-hover-bg: rgba(25%, 25%, 25%, .2);
+        --a-active-text: #f44;
+        --a-active-underline: var(--a-active-text);
+
+        --borderedblock-bg: rgba(255, 255, 255, .05);
+
+        --blockquote-border: silver;
+        --blockquote-bg: var(--borderedblock-bg);
+        --blockquote-text: currentcolor;
+
+        --issue-border: #e05252;
+        --issue-bg: var(--borderedblock-bg);
+        --issue-text: var(--text);
+        --issueheading-text: hsl(0deg, 70%, 70%);
+
+        --example-border: hsl(50deg, 90%, 60%);
+        --example-bg: var(--borderedblock-bg);
+        --example-text: var(--text);
+        --exampleheading-text: hsl(50deg, 70%, 70%);
+
+        --note-border: hsl(120deg, 100%, 35%);
+        --note-bg: var(--borderedblock-bg);
+        --note-text: var(--text);
+        --noteheading-text: hsl(120, 70%, 70%);
+        --notesummary-underline: silver;
+
+        --assertion-border: #444;
+        --assertion-bg: var(--borderedblock-bg);
+        --assertion-text: var(--text);
+
+        --advisement-border: orange;
+        --advisement-bg: #222218;
+        --advisement-text: var(--text);
+        --advisementheading-text: #f84;
+
+        --warning-border: red;
+        --warning-bg: hsla(40,100%,20%,0.95);
+        --warning-text: var(--text);
+
+        --amendment-border: #330099;
+        --amendment-bg: #080010;
+        --amendment-text: var(--text);
+        --amendmentheading-text: #cc00ff;
+
+        --def-border: #8ccbf2;
+        --def-bg: #080818;
+        --def-text: var(--text);
+        --defrow-border: #136;
+
+        --datacell-border: silver;
+
+        --indexinfo-text: #aaa;
+
+        --indextable-hover-text: var(--text);
+        --indextable-hover-bg: #181818;
+
+        --outdatedspec-bg: rgba(255, 255, 255, .5);
+        --outdatedspec-text: black;
+        --outdated-bg: maroon;
+        --outdated-text: white;
+        --outdated-shadow: red;
+
+        --editedrec-bg: darkorange;
+    }
+    /* In case a transparent-bg image doesn't expect to be on a dark bg,
+       which is quite common in practice... */
+    img { background: white; }
+}
+</style>
+<style>/* Boilerplate: style-counters */
+body {
+    counter-reset: example figure issue table;
+}
+.issue {
+    counter-increment: issue;
+}
+.issue:not(.no-marker)::before {
+    content: "Issue " counter(issue);
+}
+
+.example {
+    counter-increment: example;
+}
+.example:not(.no-marker)::before {
+    content: "Example " counter(example);
+}
+.invalid.example:not(.no-marker)::before,
+.illegal.example:not(.no-marker)::before {
+    content: "Invalid Example " counter(example);
+}
+
+figcaption {
+    counter-increment: figure;
+}
+figcaption:not(.no-marker)::before {
+    content: "Figure " counter(figure) " ";
+}
+
+figure.table figcaption {
+    counter-increment: table;
+}
+figure.table figcaption:not(.no-marker)::before {
+    content: "Table " counter(table) " ";
+}
+</style>
+<style>/* Boilerplate: style-issues */
+a[href].issue-return {
+    float: right;
+    float: inline-end;
+    color: var(--issueheading-text);
+    font-weight: bold;
+    text-decoration: none;
+}
+</style>
+<style>/* Boilerplate: style-md-lists */
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}
+</style>
+<style>/* Boilerplate: style-selflinks */
+:root {
+    --selflink-text: white;
+    --selflink-bg: gray;
+    --selflink-hover-text: black;
+}
+.heading, .issue, .note, .example, li, dt {
+    position: relative;
+}
+a.self-link {
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (3.5rem - 26px));
+    width: calc(3.5rem - 26px);
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+}
+a.self-link:hover {
+    opacity: 1;
+}
+.heading > a.self-link {
+    font-size: 83%;
+}
+.example > a.self-link,
+.note > a.self-link,
+.issue > a.self-link {
+    /* These blocks are overflow:auto, so positioning outside
+       doesn't work. */
+    left: auto;
+    right: 0;
+}
+li > a.self-link {
+    left: calc(-1 * (3.5rem - 26px) - 2em);
+}
+dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: var(--selflink-bg);
+    color: var(--selflink-text);
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+    opacity: 1;
+}
+dfn > a.self-link:hover {
+    color: var(--selflink-hover-text);
+}
+
+a.self-link::before            { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before      { content: "#"; }
+</style>
+ <body class="h-entry">
+  <div class="head">
+   <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/">
+    <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2021/logos/W3C" width="72">
+</a>
+</p>
+   <h1 class="no-ref p-name" id="title">Dataspace challenges</h1>
+   <p id="w3c-state"><a href="https://www.w3.org/standards/types/#CG-DRAFT">Draft Community Group Report</a>,
+    <time class="dt-updated" datetime="2026-05-11">11 May 2026</time></p>
+   <details open>
+    <summary>More details about this document</summary>
+    <div data-fill-with="spec-metadata">
+     <dl>
+      <dt>This version:
+      <dd><a class="u-url" href="https://w3c-cg.github.io/dataspaces/">https://w3c-cg.github.io/dataspaces/</a>
+      <dt>Feedback:
+      <dd><span><a href="mailto:public-dataspaces@w3.org?subject=%5BChallenges%5D%20YOUR%20TOPIC%20HERE">public-dataspaces@w3.org</a> with subject line “<kbd>[Challenges] <i data-lt>… message topic …</i></kbd>” (<a href="https://lists.w3.org/Archives/Public/public-dataspaces/" rel="discussion">archives</a>)</span>
+      <dt>Issue Tracking:
+      <dd><a href="https://github.com/w3c-cg/dataspaces/issues/">GitHub</a>
+      <dt class="editor">Editor:
+      <dd class="editor h-card p-author vcard"><a class="fn p-name u-url url" href="https://pietercolpaert.be">Pieter Colpaert</a>
+     </dl>
+    </div>
+   </details>
+   <div data-fill-with="warning"></div>
+   <p class="copyright" data-fill-with="copyright"><a href="https://www.w3.org/policies/#copyright">Copyright</a> © 2026 <a href="https://www.w3.org/">World Wide Web Consortium</a>. <abbr title="World Wide Web Consortium">W3C</abbr><sup>®</sup> <a href="https://www.w3.org/policies/#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/policies/#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/copyright/software-license/" rel="license" title="W3C Software and Document License">permissive document license</a> rules apply.
+</p>
+   <hr title="Separator for header">
+  </div>
+  <div class="p-summary" data-fill-with="abstract">
+   <h2 class="heading no-num no-ref no-toc settled" id="abstract"><span class="content">Abstract</span></h2>
+   <p>The W3C community group on dataspaces maintains a list of challenges.</p>
+  </div>
+  <h2 class="heading no-num no-ref no-toc settled" id="sotd"><span class="content">Status of this document</span></h2>
+  <div data-fill-with="status">
+   <p></p>
+  </div>
+  <div data-fill-with="at-risk"></div>
+  <nav data-fill-with="table-of-contents" id="toc">
+   <h2 class="no-num no-ref no-toc" id="contents">Table of Contents</h2>
+   <ol class="toc">
+    <li><a href="#introduction"><span class="secno">1</span> <span class="content">Introduction</span></a>
+    <li>
+     <a href="#Challenges"><span class="secno">2</span> <span class="content">Challenges</span></a>
+     <ol class="toc">
+      <li><a href="#vocabulary-hubs"><span class="secno">2.1</span> <span class="content">Federating Vocabulary Hubs</span></a>
+      <li><a href="#blueprints"><span class="secno">2.2</span> <span class="content">Blueprints for actors, roles and responsibilities</span></a>
+      <li><a href="#confidence"><span class="secno">2.3</span> <span class="content">End-User Confidence in Data Integrity</span></a>
+      <li><a href="#policy-engines"><span class="secno">2.4</span> <span class="content">Interoperable Policy Engines</span></a>
+      <li><a href="#discovery"><span class="secno">2.5</span> <span class="content">Data Discovery</span></a>
+      <li><a href="#pipelines"><span class="secno">2.6</span> <span class="content">Pipelining Workflows Across Participants</span></a>
+      <li><a href="#schema-alignment"><span class="secno">2.7</span> <span class="content">Schema Alignment and Semantic Data Transformation</span></a>
+     </ol>
+    <li>
+     <a href="#w3c-conformance"><span class="secno"></span> <span class="content">Conformance</span></a>
+     <ol class="toc">
+      <li><a href="#w3c-conventions"><span class="secno"></span> <span class="content">Document conventions</span></a>
+     </ol>
+    <li>
+     <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
+     <ol class="toc">
+      <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
+     </ol>
+   </ol>
+  </nav>
+  <main>
+   <h2 class="heading settled" data-level="1" id="introduction"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#introduction"></a></h2>
+   <p>This document lists the challenges the W3C Dataspaces Community Group wants to see discussed.</p>
+   <p class="note" role="note"><span class="marker">Note:</span> While the word <em>dataspaces</em> is often written in 2 words, we position dataspaces as a similar, yet different but equally important concept as a <em>database</em>, also written in 1 word.</p>
+   <p>Different definitions exist of dataspaces.
+This community did not (yet) put forward its own definition.
+It acknowledges however that the common denominator is that dataspaces entail data sharing among multiple participants in that dataspace.</p>
+   <p>Data sharing across multiple participants requires an interdisciplinary approach: it is as much about governance, as it is about business models for actors that can support such ecosystems, as it is about technical aspects.</p>
+   <p>Dataspaces bring a renewed interest in topics such as interoperability, trust and ecosystem governance.</p>
+   <h2 class="heading settled" data-level="2" id="Challenges"><span class="secno">2. </span><span class="content">Challenges</span><a class="self-link" href="#Challenges"></a></h2>
+   <p>We introduce a short description of the challenge.</p>
+   <p>The challenges are a yearly recurring topic at the <a href="https://dbis.rwth-aachen.de/SDS26/">Semantics in Dataspaces workshop (SDS)</a>.</p>
+   <h3 class="heading settled" data-level="2.1" id="vocabulary-hubs"><span class="secno">2.1. </span><span class="content">Federating Vocabulary Hubs</span><a class="self-link" href="#vocabulary-hubs"></a></h3>
+   <p>The challenge calls for a (federated) vocabulary hub architecture so multiple participants can publish and govern vocabularies without a single centralized hub. The goal is sovereignty, scalability, and resilience while enabling semantic interoperability using standards like Linked Data and SPARQL federation.</p>
+   <p><strong>Related SDS papers</strong></p>
+   <ul>
+    <li data-md>
+     <p>2025: <a href="https://ceur-ws.org/Vol-4007/06short.pdf">Federated Vocabulary Hubs as a Foundation for Semantic Layers in Data Spaces</a> - Proposes a layered, federated vocabulary-hub architecture for semantic services and sovereignty.</p>
+    <li data-md>
+     <p>2024: <a href="https://ceur-ws.org/Vol-3705/short08.pdf">On the Governance of Semantic Artefacts in Dataspaces</a> - Defines governance practices for vocabularies and ontologies to keep semantic artefacts interoperable.</p>
+   </ul>
+   <h3 class="heading settled" data-level="2.2" id="blueprints"><span class="secno">2.2. </span><span class="content">Blueprints for actors, roles and responsibilities</span><a class="self-link" href="#blueprints"></a></h3>
+   <p>This challenge asks for conceptual mapping between dataspace standards and their substitutes or complements (including technologies outside the dataspace ecosystem). The goal is to improve interoperability, avoid repeated mistakes, and identify gaps via peer-reviewed analysis and consensus.</p>
+   <p>Discussion points to the DSSC Blueprint and toolbox as existing conceptual clarifications, and references an upcoming report comparing FIWARE, EDC, and SIMPL.</p>
+   <p><strong>Related SDS papers</strong></p>
+   <ul>
+    <li data-md>
+     <p>2025: <a href="https://ceur-ws.org/Vol-4007/09short.pdf">Towards using the Solid Protocol for Data Transport in International Data Spaces (IDS)</a> - Analyzes IDS vs. Solid roles and suggests Solid as an IDS data plane.</p>
+    <li data-md>
+     <p>2024: <a href="https://ceur-ws.org/Vol-3705/short12.pdf">Challenges and Opportunities for Enabling the Next Generation of Cross-Domain Dataspaces</a> - Vision paper on governance models, requirements, and building blocks for cross-domain dataspaces.</p>
+    <li data-md>
+     <p>2023: <a href="https://doi.org/10.1145/3543873.3587645">Extending Actor Models in Data Spaces</a> - Extends actor model concepts to describe dataspace roles and interactions.</p>
+    <li data-md>
+     <p>2023: <a href="https://doi.org/10.1145/3543873.3587656">What are “personal data spaces”?</a> - Clarifies definitions and boundaries of personal data spaces.</p>
+    <li data-md>
+     <p>2023: <a href="https://doi.org/10.1145/3543873.3587689">Semantics in Dataspaces: Origin and Future Directions</a> - Surveys origins and future directions for the dataspace concept.</p>
+   </ul>
+   <h3 class="heading settled" data-level="2.3" id="confidence"><span class="secno">2.3. </span><span class="content">End-User Confidence in Data Integrity</span><a class="self-link" href="#confidence"></a></h3>
+   <p>This challenge focuses on integrity guarantees for data stored by third parties: checksums for individual objects and collections, stable across migrations between dataspaces. It emphasizes preventing tampering or data loss for end users.</p>
+   <p>Discussion asks whether this targets Linked Web Storage, how to define a "package" (HTTP response vs. triples/quads), and suggests applying integrity checks to metadata as well as data in a distributed setting.</p>
+   <p><strong>Related SDS papers</strong></p>
+   <ul>
+    <li data-md>
+     <p>2024: <a href="https://ceur-ws.org/Vol-3705/paper05.pdf">Selective disclosure of Digital Calibration Certificate in a quality infrastructure data space</a> - Uses verifiable presentations for trustworthy, selective disclosure of calibration data.</p>
+    <li data-md>
+     <p>2023: <a href="https://doi.org/10.1145/3543873.3587646">Towards a Semantic Data Ledger for Federating Dynamic Data Spaces</a> - Proposes a ledger-based approach to tamper-evident federation of dynamic data spaces.</p>
+   </ul>
+   <h3 class="heading settled" data-level="2.4" id="policy-engines"><span class="secno">2.4. </span><span class="content">Interoperable Policy Engines</span><a class="self-link" href="#policy-engines"></a></h3>
+   <p>The challenge calls for a formal, interoperable evaluation model for ODRL policies so usage control decisions are consistent across dataspaces. It requests a reference implementation, documentation, and a shared test suite of policies, requests, and expected results.</p>
+   <p>Discussion notes the need to model requests and world state (possibly via SHACL profiles), points to EDC policy engine work and DSSC enforcement frameworks, and highlights an ESWC25 paper providing a compliance report model, evaluator, test suite, and the FORCE demo application.</p>
+   <p><strong>Related SDS papers</strong></p>
+   <ul>
+    <li data-md>
+     <p>2025: <a href="https://raw.githubusercontent.com/woutslabbinck/papers/main/2025/Interoperable-Interpretation-and-Evaluation-of-ODRL-Policies.pdf">Interoperable Interpretation and Evaluation of ODRL Policies</a> - Proposes a compliance report model, evaluator, and test suite for interoperable ODRL evaluation. (Resource track of ESWC)</p>
+    <li data-md>
+     <p>2024: <a href="https://ceur-ws.org/Vol-3705/paper10.pdf">Interoperable and Continuous Usage Control Enforcement in Dataspaces</a> - Extends ODRL for time-dependent constraints and continuous enforcement.</p>
+    <li data-md>
+     <p>2024: <a href="https://ceur-ws.org/Vol-3705/paper02.pdf">The Rights Delegation Proxy: An Approach for Delegations in the Solid Dataspace</a> - Validates delegated actions against policies in Solid-based dataspaces.</p>
+   </ul>
+   <h3 class="heading settled" data-level="2.5" id="discovery"><span class="secno">2.5. </span><span class="content">Data Discovery</span><a class="self-link" href="#discovery"></a></h3>
+   <p>This challenge targets automated discovery of interoperable and trustworthy datasets over time. It proposes a criteria language (schema, provenance, geo-temporal scope, usage conditions), a compatible catalog data model, and an evaluation algorithm with a reference implementation.</p>
+   <p>Discussion cites VoID, DCAT-AP, DSSC building blocks, and RDF Data Cube for metadata, debates whether federated querying is feasible given "data at source" policies, and argues that richer metadata (e.g., CSVW-based structural descriptions) is required beyond linking to vocabularies. Examples and public SPARQL endpoints are suggested to show feasibility.</p>
+   <p><strong>Related SDS papers</strong></p>
+   <ul>
+    <li data-md>
+     <p>2025: <a href="https://ceur-ws.org/Vol-4007/05short.pdf">piveau-X - A Compliance-Focused Semantic Web-based Catalog for Data Spaces</a> - Implements a compliant catalog for dataset publication and discovery.</p>
+    <li data-md>
+     <p>2025: <a href="https://ceur-ws.org/Vol-4007/07regular.pdf">GC-DAM - Graph and Contextual Embeddings for Heterogeneous Data Asset Matching</a> - Embedding-based asset matching to improve discovery across heterogeneous datasets.</p>
+    <li data-md>
+     <p>2025: <a href="https://ceur-ws.org/Vol-4007/06short.pdf">Federated Vocabulary Hubs as a Foundation for Semantic Layers in Data Spaces</a> - Federated vocab hubs and semantic services to enable discovery across spaces.</p>
+    <li data-md>
+     <p>2024: <a href="https://ceur-ws.org/Vol-3705/paper01.pdf">FAIRness in Dataspaces: The Role of Semantics for Data Management</a> - Maps FAIR principles to semantic methods that improve discovery and reuse.</p>
+    <li data-md>
+     <p>2024: <a href="https://ceur-ws.org/Vol-3705/paper06.pdf">Adapting Ontology-based Data Access for Data Spaces</a> - Adapts OBDA techniques to enable semantic querying over dataspace sources.</p>
+   </ul>
+   <h3 class="heading settled" data-level="2.6" id="pipelines"><span class="secno">2.6. </span><span class="content">Pipelining Workflows Across Participants</span><a class="self-link" href="#pipelines"></a></h3>
+   <p>This challenge argues that dataspaces duplicate processing pipelines and could benefit from reuse of derived datasets or shared processing services. It proposes expressing desired outcomes, mapping them to processing plans, and allowing participants to advertise which plan steps they can perform, plus a techno-economic analysis of value-adding roles.</p>
+   <p>Earlier discussions stressed that “intermediaries” are better seen as participants; pipelines are business-layer concerns, while dataspace protocols remain peer-to-peer. It highlights the role of trust anchors, policy negotiation, and provenance models, and suggests aligning with Gaia-X service offerings and clearer layer/plane models for business versus technical concerns.</p>
+   <p>From a more high-level perspective however, the Data Governance Act (as well as the Digital Omnibus draft) talk about intermediaries as a company that is a trusted party to bring data from source to consumer.</p>
+   <p><strong>Related SDS papers</strong></p>
+   <ul>
+    <li data-md>
+     <p>2025: <a href="https://ceur-ws.org/Vol-4007/04regular.pdf">Leveraging Query Decomposition for Scalable SPARQL Materialization in Dataspaces</a> - Decomposes overlapping SPARQL queries to reuse materialized subresults and reduce redundant processing.</p>
+    <li data-md>
+     <p>2023: <a href="https://doi.org/10.1145/3543873.3587686">Towards a Data Space for Interoperability of Analytic Provenance</a> - Focuses on sharing analytic provenance to enable reuse of processing steps across participants.</p>
+   </ul>
+   <h3 class="heading settled" data-level="2.7" id="schema-alignment"><span class="secno">2.7. </span><span class="content">Schema Alignment and Semantic Data Transformation</span><a class="self-link" href="#schema-alignment"></a></h3>
+   <p>This challenge addresses the fact that dataspaces typically do not enforce a single common data model. Each participant retains its own schemas and vocabularies, which makes interoperability dependent on explicit alignments across those heterogeneous representations.</p>
+   <p>Schema alignment is not only about documenting correspondences. To be operational in real data exchange and federation settings, alignments usually need to be accompanied by semantic data transformation. In other words, the challenge is to move from “these fields mean the same” to executable, testable mappings that can actually convert data instances from one participant representation into another.</p>
+   <p>Discussion points</p>
+   <ol>
+    <li data-md>
+     <p>How can participants publish machine readable schema descriptions that enable alignment at scale, for example, using RDF, OWL, SHACL, DCAT profiles, ...</p>
+    <li data-md>
+     <p>How should alignments be expressed so they are both semantically precise and executable?</p>
+    <li data-md>
+     <p>How can mappings support typical transformation needs such as datatype conversion, unit conversion, normalization of value sets, and changes in granularity such as splitting and merging attributes</p>
+    <li data-md>
+     <p>How can alignments and transformations be validated and regression tested, especially when schemas evolve and introduce breaking changes</p>
+    <li data-md>
+     <p>What governance and lifecycle mechanisms are needed so that alignments can be versioned, reviewed, deprecated, and reused across participants, potentially via federated registries or hubs</p>
+   </ol>
+   <p><strong>Related SDS papers</strong></p>
+   <ul>
+    <li data-md>
+     <p>2024: <a href="https://ceur-ws.org/Vol-3705/short13.pdf">Semantic Data Link: Bridging Domain-Specific Needs with Universal and Interoperable Semantic Models</a> - Proposes a lightweight semantic description framework for interoperable datasets.</p>
+    <li data-md>
+     <p>2023: <a href="https://dl.acm.org/doi/10.1145/3543873.3587662">The PLASMA Framework: Laying the Path to Domain-Specific Semantics in Dataspaces</a> - Focuses on a tool for creating semantic models for data sources</p>
+   </ul>
+  </main>
+  <div data-fill-with="conformance">
+   <h2 class="heading no-num no-ref settled" id="w3c-conformance"><span class="content">Conformance</span><a class="self-link" href="#w3c-conformance"></a></h2>
+   <h3 class="heading no-num no-ref settled" id="w3c-conventions"><span class="content">Document conventions</span><a class="self-link" href="#w3c-conventions"></a></h3>
+   <p>Conformance requirements are expressed
+    with a combination of descriptive assertions
+    and RFC 2119 terminology.
+    The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL”
+    in the normative parts of this document
+    are to be interpreted as described in RFC 2119.
+    However, for readability,
+    these words do not appear in all uppercase letters in this specification.
+
+    </p>
+   <p>All of the text of this specification is normative
+    except sections explicitly marked as non-normative, examples, and notes. <a data-link-type="biblio" href="#biblio-rfc2119" title="Key words for use in RFCs to Indicate Requirement Levels">[RFC2119]</a>
+
+    </p>
+   <p>Examples in this specification are introduced with the words “for example”
+    or are set apart from the normative text
+    with <code>class="example"</code>,
+    like this:
+
+    </p>
+   <div class="example" id="w3c-example">
+    <a class="self-link" href="#w3c-example"></a>
+        
+    <p>This is an example of an informative example.
+    </p>
+   </div>
+   <p>Informative notes begin with the word “Note”
+    and are set apart from the normative text
+    with <code>class="note"</code>,
+    like this:
+
+    </p>
+   <p class="note" role="note">Note, this is an informative note.</p>
+  </div>
+  <script src="https://www.w3.org/scripts/TR/2021/fixup.js"></script>
+  <h2 class="heading no-num no-ref settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
+  <h3 class="heading no-num no-ref settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
+  <dl>
+   <dt id="biblio-rfc2119">[RFC2119]
+   <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
+  </dl>
